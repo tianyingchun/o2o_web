@@ -1,9 +1,167 @@
 <html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>产品详情</title>
+    <meta charset="UTF-8">
+    <title>产品详情</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/product.css">
+    <script type="text/javascript" id="seajsnode" src="seajs_web/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+    <!--<script type="text/javascript" src="seajs_web/sea-modules/seajs/seajs-style/1.0.2/sea.js"></script>-->
+
 </head>
+
 <body>
-	
+    <header class="s-header">
+        <nav>
+            <h1>商品详情页</h1>
+            <a href="#" class="back">返回</a>
+            <label for="header-search-input" class="more">更多</label>
+        </nav>
+    </header>
+    <section id="slideshow">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="http://q.i02.wimg.taobao.com/bao/uploaded/i3/T1k6HZFgRcXXXXXXXX_!!0-item_pic.jpg_640x640q75.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="http://q.i02.wimg.taobao.com/bao/uploaded/i3/T1k6HZFgRcXXXXXXXX_!!0-item_pic.jpg_640x640q75.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="http://q.i02.wimg.taobao.com/bao/uploaded/i3/T1k6HZFgRcXXXXXXXX_!!0-item_pic.jpg_640x640q75.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="http://q.i02.wimg.taobao.com/bao/uploaded/i3/T1k6HZFgRcXXXXXXXX_!!0-item_pic.jpg_640x640q75.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="http://q.i02.wimg.taobao.com/bao/uploaded/i3/T1k6HZFgRcXXXXXXXX_!!0-item_pic.jpg_640x640q75.jpg" alt="">
+            </div>
+        </div>
+        <div class="pagination"></div>
+        </div>
+    </section>
+    <section id="summary" class="s-summary">
+        <!-- product title -->
+        <div class="title">
+            <h1>
+                [买2送1]简品100.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶
+                <b></b>
+            </h1>
+        </div>
+        <!-- product description -->
+        <div class="description">
+            <h1>
+                描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶
+                <b></b>
+            </h1>
+        </div>
+        <!-- 产品价格 -->
+        <ul class="m-prices">
+            <li class="p-price">
+                <span class="key">促销：</span>
+                <div class="value">
+                    <span class="price">¥<b class="p-price-v">29.00</b>
+                    </span>
+                </div>
+            </li>
+            <li class="o-price">
+                <span class="key">原价：</span>
+                <div class="value">
+                    <del>¥
+                        <span class="o-price-v">56.00</span>
+                    </del>
+                    <span class="unit-price item">560.00元/500g</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 产品销量 -->
+        <div class="m-sales">
+            <span class="key">销量：</span>
+            <div class="value"><b>610</b>件</div>
+        </div>
+        <!-- 产品配送 -->
+        <div class="m-logistics">
+            <span class="key">配送：</span>
+            <div class="value">
+                <span class="form">浙江杭州</span>
+                至
+                <span class="to">上海</span>
+                <span class="price">快递: 0.00</span>
+            </div>
+        </div>
+    </section>
+    <!-- user buy box -->
+    <section class="s-buy ui-section-box">
+        <div class="fields">
+            <!-- buy summay -->
+            <div class="summary" style="height: 37px;">
+                <ul class="summary-c" style="position: static;">
+                    <li class="price">
+                        <span class="key">促销：</span><b class="price-v">¥29.00</b>
+                    </li>
+
+                    <li class="stock">
+                        <span class="key">库存：</span>
+                        <span class="stock-v">1308</span>件
+                    </li>
+                </ul>
+            </div>
+            <!-- 购买数量 -->
+            <div class="quantity">
+                <h2>数量：</h2>
+                <div class="items">
+                    <span class="ui-number">
+                        <button type="button" class="decrease">-</button>
+                        <input type="number" class="num" name="quantity" autocomplete="off" value="1" min="1" max="1308">
+                        <button type="button" class="increase">+</button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- go to buy -->
+            <div class="buy-button">
+                <button>立即购买</button>
+            </div>
+
+        </div>
+        <div class="service">
+            <h2>服务：</h2>
+            <ul>
+                <li>
+                    按时发货
+                </li>
+                <li>
+                    T3 极速退款
+                </li>
+                <li>
+                    赠运费险
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer class="s-footer">
+		<div class="copyright">Copyright© 2013-2016 壹钱包版权所有 粤ICP备11100138号</div>
+    </footer>
+    <script type="text/javascript">
+    seajs.config({
+        base: "./seajs_web/sea-modules/",
+        debug: true,
+        alias: {
+            // "seajs-debug": "seajs/seajs-debug/1.1.1/seajs-debug",
+            "jquery": "jquery/jquery/1.10.1/jquery",
+            "jquery-debug": "jquery/jquery/1.10.1/jquery"
+        }
+    });
+    seajs.use("sea-libs/slideshow/1.0.0/slideshow-debug", function(Swiper) {
+        var mySwiper = new Swiper('#slideshow', {
+            pagination: '.pagination',
+            // paginationClickable: false,
+            autoplay: 3000,
+            slidesPerView: 1,
+            loop: true
+        });
+    });
+    </script>
 </body>
+
 </html>
