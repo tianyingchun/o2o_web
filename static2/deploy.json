@@ -1,4 +1,6 @@
 {
+	"name":"static2",
 	"assets": ["assets/","images/"],
-	"styles": ["styles/"]
+	"styles": ["styles/"],
+	"output": "live"
 }
