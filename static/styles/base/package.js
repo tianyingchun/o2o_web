@@ -1,3 +1,5 @@
 enyo.depends(
-	"base.css"
+	"base.css",
+	"reset.css",
+	"normalize.css"
 );

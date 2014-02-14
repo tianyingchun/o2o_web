@@ -8,51 +8,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <style type="text/css">
-    .payment-body h2 {
-        margin: 1rem 0;
-        text-align:center;
-        font-size:2rem;
-    }
-    .payment-body {
-        margin: 0 1rem;
-    }
-    .payment-body img {
-        width:100px;
-    }
-    .invoice-desc {
-        margin: 2em 0;
-        line-height: 1.5em;
-        font-size: 1.5em;
-        text-align:center;
-    }
-    .img-container {
-        text-align: center;
-    }
-    .save-buttons button {
-        background-color: #b57230;
-        color: #fff;
-        border: 0;
-        margin: 1em auto;
-        -webkit-border-radius: .5em;
-        border-radius: .5em;
-        width: 96%;
-        font-size: 1.6rem;
-        padding: 1rem;
-        -webkit-box-flex: 1;
-        display: block;
-        -webkit-user-select: none;
-    }
-    .fixed{
-    	position: fixed;
-    	bottom:0;
-    	left:0;
-		width: 100%;
-    }
-    </style>
-    <script type="text/javascript" src="seajs_web/enyo.js"></script>
-    <script type="text/javascript" src="static/package.js"></script>
-    <script type="text/javascript" src="static2/package.js"></script>
+    <!-- for debug model -->
+    <!--<script type="text/javascript" src="seajs_web/enyo.js"></script>
+    <script type="text/javascript" src="static/package.js"></script>-->
+
+    <!-- for release model -->
+    <link rel="stylesheet" type="text/css" href="deploy/static/live.css">
 </head>
 
 <body>
@@ -87,16 +48,14 @@
     </div>
     <script type="text/javascript">
     // only used to debug model. in live model need to direct attach stylesheet files to <head>
-    enyo.ready(function() {
-        // alert("initlized");
-        // 
+    window.onload = function() {
         var screenHeight = document.body.offsetHeight;
         var wrapperHeight = document.querySelector("#wrapper").offsetHeight;
         var footerHeight = document.querySelector("#footer").offsetHeight;
         if ((wrapperHeight + footerHeight) <= screenHeight) {
-        	document.querySelector("#footer").classList.add("fixed");
+            document.querySelector("#footer").classList.add("fixed");
         }
-    });
+    };
     </script>
 </body>
 

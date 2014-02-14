@@ -1,4 +1,5 @@
-#base {
+#base-test {
 	background-color: #fff;
+	/* test build image relative path.*/
 	background:url(../../images/log.png) no-repeat;
 }
