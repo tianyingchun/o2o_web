@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <style type="text/css">
+    </style>
+    <!-- debug model for styles-->
+    <script type="text/javascript" src="../seajs_web/enyo.js"></script>
+    <script type="text/javascript" src="../static2/package.js"></script>
+    <!-- release model -->
+    <!-- <link rel="stylesheet" type="text/css" href="../deploy/static2/live.css"> -->
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="s-header">
+            <nav>
+                <h1>Demo page</h1>
+                <a href="#" class="back">back</a>
+                <label for="header-search-input" class="more">more</label>
+            </nav>
+        </header>
+        <section class="payment-body">
+            <h2>Payment successfully!</h2>
+            <div class="invoice-desc">
+                Note: place some description here!
+                <br />save your invoice
+                <br />
+            </div>
+            <div class="img-container">
+                <img src="http://tp4.sinaimg.cn/1642909335/180/5685843615/0" />
+                <img src="http://tp4.sinaimg.cn/1642909335/180/5685843615/0" />
+                <img src="http://tp4.sinaimg.cn/1642909335/180/5685843615/0" />
+
+            </div>
+            <div class="save-buttons">
+                <button>Save your invoice</button>
+            </div>
+        </section>
+        <footer id="footer" class="s-footer">
+            <div class="copyright">Copyright© 2013-2016 1qianbao.com</div>
+        </footer>
+    </div>
+    <script type="text/javascript">
+    // only used to debug model. in live model need to direct attach stylesheet files to <head>
+    // comment here if you are live model, in javascript we use seajs dynamic loader.
+    enyo.ready(function() {
+        
+        var screenHeight = document.body.offsetHeight;
+        var wrapperHeight = document.querySelector("#wrapper").offsetHeight;
+        var footerHeight = document.querySelector("#footer").offsetHeight;
+        if ((wrapperHeight + footerHeight) <= screenHeight) {
+            document.querySelector("#footer").classList.add("fixed");
+        }
+    });
+    </script>
+</body>
+
+</html>

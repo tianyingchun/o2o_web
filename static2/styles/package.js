@@ -1,3 +1,5 @@
 enyo.depends(
-	"test.css"
+	"base/",
+	"modules/",
+	"demo.css"
 );
