@@ -242,7 +242,7 @@ a:-webkit-any-link {
     text-align: center;
     padding-top: 1em;
 }
-.s-buy .buy-button button {
+.s-buy .buy-button .button {
     background-color: #b57230;
     color: #fff;
     border: 0;
