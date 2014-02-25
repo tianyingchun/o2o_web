@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>支付页面</title>
+    <!-- <meta http-equiv="refresh" content="0; url=http://www.google.com"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <style type="text/css">
+    .s-header {
+        display: none;
+    }
+    </style>
+    <!-- for debug model -->
+    <!--<script type="text/javascript" src="seajs_web/enyo.js"></script>
+    <script type="text/javascript" src="static/package.js"></script>-->
+
+    <!-- for release model -->
+    <link rel="stylesheet" type="text/css" href="deploy/static/live.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="s-header">
+            <nav>
+                <h1>支付页面</h1>
+                <a href="#" class="back">返回</a>
+                <label for="header-search-input" class="more">更多</label>
+            </nav>
+        </header>
+        <section class="payment-body">
+            <h2 class="pay-fail-title">支付失败</h2>
+            <div class="error-message">
+                当前产品数量超出最大的。。。当前产品数量超出最大的。。。当前产品数量超出最大的。。。当前产品数量超出最大的。。。
+            </div>
+            <section class="pay-summary">
+                <div class="item">产品名称：简品100.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶</div>
+                <div class="item">数量：10</div>
+                <div class="item m-prices">总价：
+                    <span class="price">¥<b class="p-price-v">29.00</b>
+                    </span>
+                </div>
+            </section>
+
+            <div class="save-buttons">
+                <input type="button" class="button" id="backbutton" value="返回" />
+            </div>
+        </section>
+        <footer id="footer" class="s-footer">
+            <div class="copyright">Copyright© 2013-2016 壹钱包版权所有</div>
+        </footer>
+    </div>
+    <script type="text/javascript">
+    // only used to debug model. in live model need to direct attach stylesheet files to <head>
+    window.onload = function() {
+        var screenHeight = document.body.offsetHeight;
+        var wrapperHeight = document.querySelector("#wrapper").offsetHeight;
+        var footerHeight = document.querySelector("#footer").offsetHeight;
+        if ((wrapperHeight + footerHeight) <= screenHeight) {
+            document.querySelector("#footer").classList.add("fixed");
+        }
+        var backBtn = document.querySelector("#backbutton");
+        backBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            history.back();
+        }, false);
+    };
+    </script>
+</body>
+
+</html>
