@@ -1,0 +1,5 @@
+{
+	"name": "external",
+	"assets": ["libs/"],
+	"output": "live"
+}
