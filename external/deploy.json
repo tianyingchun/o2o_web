@@ -1,5 +1,6 @@
 {
 	"name": "external",
 	"assets": ["libs/"],
-	"output": "live"
+	"output": "live",
+	"ignoreCss": true
 }

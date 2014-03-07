@@ -1,6 +1,5 @@
 {
 	"name":"static2",
 	"assets": ["images/"],
-	"styles": ["styles/"],
 	"output": "live"
 }
