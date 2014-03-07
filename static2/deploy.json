@@ -1,5 +1,5 @@
 {
 	"name":"static2",
-	"assets": ["images/"],
+	"assets": ["images/","assets/"],
 	"output": "live"
 }
