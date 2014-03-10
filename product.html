@@ -125,9 +125,16 @@
                         </span>
                     </div>
                 </div>
+                <div id="mobile-phone">
+                    <h2>收货人手机：</h2>
+                    <div class="items">
+                        <input class="input" type="text" id="mobile-phone-number">
+                        <span id="mobile-error-msg" class="red" style="line-height: 3rem; float:left; padding-left:10px;">*</span>
+                    </div>
+                </div>
                 <!-- go to buy -->
                 <div class="buy-button">
-                    <input class="button" type="submit" value="立即购买" />
+                    <input class="button" id="submit-order" type="submit" value="立即购买" />
                 </div>
             </form>
         </div>
@@ -184,10 +191,10 @@
                 max = $number.prop("max"),
                 $quantity = $("#quantity");
 
-            $number.on("blur", function () {
+            $number.on("blur", function() {
                 var $this = $(this);
                 var _number = parseInt($this.val());
-                if(_number>max) {
+                if (_number > max) {
                     $number.val(max);
                 }
             });
@@ -202,6 +209,18 @@
                     $number.val(_num);
                 }
             });
+
+            $("#submit-order").on("click", function (e) {
+                var mobile = $.trim($("#mobile-phone-number").val());
+                var regex =  /^[1][358]\d{9}$/;
+                if(!regex.test(mobile))
+                {
+                    $("#mobile-error-msg").html("请输入正确格式的手机号码！");
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
         });
     });
     </script>
