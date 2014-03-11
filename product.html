@@ -84,11 +84,19 @@
         </ul>
         <!-- 产品销量 -->
         <div class="m-sales">
-            <span class="key">销量：</span>
-            <div class="value"><b>610</b>件</div>
+            <div class="sale-amount">
+                <span class="key">销量：</span>
+                <div class="value"><b>610</b>件</div>
+            </div>
+            <ul class="summary-c" style="position: static;">
+                <li class="stock">
+                    <span class="key">库存：</span>
+                    <span class="stock-v">1308</span>件
+                </li>
+            </ul>
         </div>
         <!-- 产品配送 -->
-        <div class="m-logistics">
+        <!--  <div class="m-logistics">
             <span class="key">配送：</span>
             <div class="value">
                 <span class="form">浙江杭州</span>
@@ -96,23 +104,11 @@
                 <span class="to">上海</span>
                 <span class="price">快递: 0.00</span>
             </div>
-        </div>
+        </div> -->
     </section>
     <!-- user buy box -->
     <section class="s-buy ui-section-box">
         <div class="fields">
-            <!-- buy summay -->
-            <div class="summary" style="height: 37px;">
-                <ul class="summary-c" style="position: static;">
-                    <li class="price">
-                        <span class="key">促销：</span><b class="price-v">¥29.00</b>
-                    </li>
-                    <li class="stock">
-                        <span class="key">库存：</span>
-                        <span class="stock-v">1308</span>件
-                    </li>
-                </ul>
-            </div>
             <form class="form" method="post" id="buy-form">
                 <!-- 购买数量 -->
                 <div class="quantity">
@@ -128,7 +124,7 @@
                 <div id="mobile-phone">
                     <h2>收货人手机：</h2>
                     <div class="items">
-                        <input class="input" type="text" id="mobile-phone-number">
+                        <input class="input" type="tel" id="mobile-phone-number">
                         <span id="mobile-error-msg" class="red" style="line-height: 3rem; float:left; padding-left:10px;">*</span>
                     </div>
                 </div>
@@ -139,7 +135,7 @@
             </form>
         </div>
         <div class="service">
-            <h2>服务：</h2>
+            <!-- <h2>服务：</h2>
             <ul>
                 <li>
                     按时发货
@@ -150,7 +146,7 @@
                 <li>
                     赠运费险
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </section>
     <footer class="s-footer">
@@ -210,11 +206,10 @@
                 }
             });
 
-            $("#submit-order").on("click", function (e) {
+            $("#submit-order").on("click", function(e) {
                 var mobile = $.trim($("#mobile-phone-number").val());
-                var regex =  /^[1][358]\d{9}$/;
-                if(!regex.test(mobile))
-                {
+                var regex = /^[1][358]\d{9}$/;
+                if (!regex.test(mobile)) {
                     $("#mobile-error-msg").html("请输入正确格式的手机号码！");
                     e.preventDefault();
                     return false;
