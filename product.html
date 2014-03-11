@@ -210,7 +210,7 @@
                 var mobile = $.trim($("#mobile-phone-number").val());
                 var regex = /^[1][358]\d{9}$/;
                 if (!regex.test(mobile)) {
-                    $("#mobile-error-msg").html("请输入正确格式的手机号码！");
+                    $("#mobile-phone-number").addClass("error");
                     e.preventDefault();
                     return false;
                 }

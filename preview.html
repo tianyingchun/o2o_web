@@ -30,7 +30,7 @@
     </header>
     <section id="slideshow">
         <div class="swiper-wrapper">
-       
+
         </div>
         <div class="pagination"></div>
         </div>
@@ -55,7 +55,7 @@
             <li class="p-price">
                 <span class="key">促销：</span>
                 <div class="value">
-                    <span class="price">¥<b class="p-price-v" id="nowprice1">29.00</b>
+                    <span class="price">¥<b class="p-price-v" id="nowprice">29.00</b>
                     </span>
                 </div>
             </li>
@@ -71,25 +71,21 @@
         </ul>
         <!-- 产品销量 -->
         <div class="m-sales">
-            <span class="key">销量：</span>
-            <div class="value"><b>610</b>件</div>
+            <div class="sale-amount">
+                <span class="key">销量：</span>
+                <div class="value"><b>610</b>件</div>
+            </div>
+            <ul class="summary-c" style="position: static;">
+                <li class="stock">
+                    <span class="key">库存：</span>
+                    <span id="stock" class="stock-v">1308</span>件
+                </li>
+            </ul>
         </div>
     </section>
     <!-- user buy box -->
     <section class="s-buy ui-section-box">
         <div class="fields">
-            <!-- buy summay -->
-            <div class="summary" style="height: 37px;">
-                <ul class="summary-c" style="position: static;">
-                    <li class="price">
-                        <span class="key">促销：</span><b class="price-v" id="nowprice">¥29.00</b>
-                    </li>
-                    <li class="stock">
-                        <span class="key">库存：</span>
-                        <span id="stock" class="stock-v">1308</span>件
-                    </li>
-                </ul>
-            </div>
             <form class="form" method="post" id="buy-form">
                 <!-- 购买数量 -->
                 <div class="quantity">
@@ -102,6 +98,13 @@
                         </span>
                     </div>
                 </div>
+                <div id="mobile-phone">
+                    <h2>收货人手机：</h2>
+                    <div class="items">
+                        <input class="input" type="tel" id="mobile-phone-number">
+                        <span id="mobile-error-msg" class="red" style="line-height: 3rem; float:left; padding-left:10px;">*</span>
+                    </div>
+                </div>
                 <!-- go to buy -->
                 <div class="buy-button">
                     <input class="button" disabled="true" type="submit" value="立即购买" />
@@ -109,18 +112,7 @@
             </form>
         </div>
         <div class="service">
-            <h2>服务：</h2>
-            <ul>
-                <li>
-                    按时发货
-                </li>
-                <li>
-                    T3 极速退款
-                </li>
-                <li>
-                    赠运费险
-                </li>
-            </ul>
+
         </div>
     </section>
     <footer class="s-footer">
@@ -130,9 +122,9 @@
     jQuery(function() {
         var $ = jQuery;
         var $slideshow = $(".swiper-wrapper");
-        
+
         var product = window.JavaInterface && window.JavaInterface.getData();
-        
+
         console.log("product:" + product);
         product = product && JSON.parse(product) || JSON.parse('{"images":["http://q.i02.wimg.taobao.com/bao/uploaded/i3/T1k6HZFgRcXXXXXXXX_!!0-item_pic.jpg_640x640q75.jpg"],"stock":56,"price":5600,"desc":"效果好","name":"出错了,请联系管理员"}');
 
@@ -166,11 +158,9 @@
         //
         var $stock = $("#stock");
         var $nowprice = $("#nowprice");
-        var $nowprice1 = $("#nowprice1");
 
         $stock.html(product.stock || 0);
         $nowprice.html("¥" + product.price);
-        $nowprice1.html(product.price);
 
         // increase, decrease.
         var $number = $("#num-quantity"),
