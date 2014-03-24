@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>触屏版-商户列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- for debug model -->
+    <script type="text/javascript" src="../seajs_web/enyo.js"></script>
+    <script type="text/javascript" src="../static/package.js"></script>
+    <!-- for release model -->
+    <!--<link rel="stylesheet" type="text/css" href="deploy/static/live.css">-->
+    <script type="text/javascript" id="seajsnode" src="../seajs_web/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="s-header">
+            <nav>
+                <h1>商品列表</h1>
+                <!-- <a href="#" class="back">返回</a> -->
+                <label for="header-search-input" class="more">更多</label>
+            </nav>
+        </header>
+        <ul id="all-products" class="products">
+            <li class="item" data-link="http://www.baidu.com/?1">
+                <div class="left">
+                    <img src="http://gi4.mlist.alicdn.com/bao/uploaded/i4/T1L09iFtBaXXXXXXXX_!!0-item_pic.jpg_300x300q90.jpg" />
+                </div>
+                <div class="right">
+                    <div class="title">简品100.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶</div>
+                    <div class="short-desc">描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶</div>
+                    <!-- 产品价格 -->
+                    <ul class="m-prices">
+                        <li class="o-price">
+                            <span class="key">原价：</span>
+                            <div class="value">
+                                <del>¥
+                                    <span class="o-price-v">56.00</span>
+                                </del>
+                            </div>
+                        </li>
+                        <li class="p-price">
+                            <span class="key">促销：</span>
+                            <div class="value">
+                                <span class="price">¥<b class="p-price-v">29.00</b>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="item" data-link="http://www.baidu.com/">
+                <div class="left">
+                    <img src="http://gi4.mlist.alicdn.com/bao/uploaded/i4/T1L09iFtBaXXXXXXXX_!!0-item_pic.jpg_300x300q90.jpg" />
+                </div>
+                <div class="right">
+                    <div class="title">简品100.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶</div>
+                    <div class="short-desc">描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶描述.锡兰红茶 奶茶专用斯里兰卡进口锡兰红茶 袋泡茶</div>
+                    <!-- 产品价格 -->
+                    <ul class="m-prices">
+                        <li class="o-price">
+                            <span class="key">原价：</span>
+                            <div class="value">
+                                <del>¥
+                                    <span class="o-price-v">56.00</span>
+                                </del>
+                            </div>
+                        </li>
+                        <li class="p-price">
+                            <span class="key">促销：</span>
+                            <div class="value">
+                                <span class="price">¥<b class="p-price-v">29.00</b>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <footer id="footer" class="s-footer">
+        <div class="copyright">Copyright© 2013-2016 壹钱包版权所有</div>
+    </footer>
+
+    <script type="text/javascript">
+    seajs.config({
+        base: "../seajs_web/sea-modules/",
+        // debug: true,
+        // 路径配置用来跨目录调用.
+        paths: {
+            // "jquery": "http://live/root/path",
+        },
+        // / 文件编码
+        charset: 'utf-8',
+        // 别名配置,注意别名的 VALUE 只能为sea-module define 的ID 如下 jquery,只能与sea-modules/ 下面的路径
+        // define("jquery/jquery/1.10.1/jquery", [], function () { return jQuery; } );保持一致.
+        alias: {
+            // "seajs-debug": "seajs/seajs-debug/1.1.1/seajs-debug",
+            "jquery": "jquery/jquery/1.10.1/jquery", //=={jquery=paths.jquery}/jquery/1.10.1/jquery
+            "jquery-debug": "jquery/jquery/1.10.1/jquery-debug"
+        }
+    });
+    // only used to debug model. in live model need to direct attach stylesheet files to <head>
+
+
+    seajs.use("jquery", function($) {
+        $(function() {
+            $("#all-products").on("click", "li", function (e) {
+                var $this = $(this);
+                window.location.href = $this.data("link");
+            });
+            var screenHeight = document.body.offsetHeight;
+            var wrapperHeight = document.querySelector("#wrapper").offsetHeight;
+            var footerHeight = document.querySelector("#footer").offsetHeight;
+            if ((wrapperHeight + footerHeight) <= screenHeight) {
+                document.querySelector("#footer").classList.add("fixed");
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

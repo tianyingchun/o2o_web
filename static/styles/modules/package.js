@@ -1,4 +1,5 @@
 enyo.depends(
 	"product.css",
-	"payment.css"
+	"payment.css",
+	"productlist.css"
 );

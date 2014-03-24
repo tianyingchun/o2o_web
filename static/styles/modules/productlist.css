@@ -1,0 +1,52 @@
+ul.products li {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    list-style: none;
+}
+li.item {
+    border-bottom: 1px solid #ccc;
+    padding: 0.8rem;
+}
+li.item.last {
+    border-bottom: none;
+}
+ul.products .left {
+    float: left;
+    padding: 0.2rem 0.3rem;
+    max-width: 30%;
+    border:1px solid #D8D7D7;
+}
+li.item img {
+    max-width: 100px;
+    padding: 0;
+    margin: 0;
+}
+ul.products .right {
+    float: left;
+    width: 70%;
+    padding: 0.2rem 0.3rem;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+}
+ul.products .right .title {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    line-height: 1.5em;
+    white-space: nowrap;
+}
+ul.products .right .short-desc {
+    overflow: hidden;
+    line-height: 1.5em;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.products .m-prices{
+    border-bottom: none;
+    overflow: hidden;
+}
+.products .m-prices li {
+	float: left;
+	width: 100%;
+	padding-left: 0;
+}
